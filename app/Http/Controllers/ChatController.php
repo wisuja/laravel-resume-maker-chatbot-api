@@ -47,6 +47,15 @@ class ChatController extends Controller
             return $this->historyResponse($user);
         } else if ($chat == '/createcv' || $isCreatingCV) {
             return $this->chatResponse($user, $isCreatingCV, $chat, $parameter);
+        } else {
+            $response = [
+                'message' => 'Hi there! Is there something I can help?',
+                'data' => [
+                    'commands' => $this->commands
+                ]
+            ];
+    
+            return response($response, 200);
         }
     }
 
