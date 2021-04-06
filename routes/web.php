@@ -22,16 +22,6 @@ Route::get('/', function () {
     return 'Resume maker API is working!';
 });
 
-Route::get('/token', function() {
-    $response = [
-        "message" => "CSRF Token",
-        "data" => [
-            "token" => csrf_token()
-        ]
-    ];
-    return response($response, 200);
-});
-
 Route::post('/register', [RegisterController::class, 'register']);
 Route::post('/login', [LoginController::class, 'login']);
 

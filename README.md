@@ -19,19 +19,6 @@ This is the API source code for Resume maker Chatbot Application
 
 ## API Documentation
 
-### Get CSRF Token
-
-```
-  GET /token
-
-  {
-    "message": "CSRF Token",
-    "data": {
-      "token": "sometokeninhere"
-    }
-}
-```
-
 ### Register an account
 
 ```
