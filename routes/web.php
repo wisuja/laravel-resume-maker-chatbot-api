@@ -23,9 +23,14 @@ Route::get('/', function () {
 });
 
 Route::get('/token', function() {
-    return csrf_token();
+    $response = [
+        "message" => "CSRF Token",
+        "data" => [
+            "token" => csrf_token()
+        ]
+    ];
+    return response($response, 200);
 });
-
 
 Route::post('/register', [RegisterController::class, 'register']);
 Route::post('/login', [LoginController::class, 'login']);

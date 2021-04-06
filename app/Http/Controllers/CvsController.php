@@ -47,9 +47,9 @@ class CvsController extends Controller
      */
     public function show(Cv $cv)
     {
-        $pdf = PDF::loadView('test');
+        $pdf = PDF::loadView('cv-template');
 
-        return $pdf->download('test.pdf');
+        return $pdf->download('cv.pdf');
     }
 
     /**
