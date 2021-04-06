@@ -2,21 +2,33 @@
 
 namespace App\Http\Controllers;
 
-use App\Controllers\Jobsearch;
 use App\Models\Cv;
 use App\Models\CvDetail;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Validator;
 
 class ChatController extends Controller
 {
     private $commands;
+    private $validations;
 
     public function __construct()
     {
-        $this->commands = DB::select('select * from commands'); 
+        $this->commands = DB::select('select * from commands');
+        $this->validations = [
+            "name" => ["name" => ["required"]],
+            "email" => ["email" => ["required", "email:rfc,dns"]],
+            "phone" => ["phone" => ["required", "min:11", "max:15"]],
+            "address" => ["address" => ["required"]],
+            "keywords" => ["keywords" => ["required"]],
+            "skills" => ["skills" => ["required"]],
+            "description" => ["description" => ["required"]],
+            "education" => ["education" => ["required"]],
+            "work_experiences" => ["work_experiences" => ["required"]],
+            "links" => ["links" => ["required"]],
+        ];
     }
 
     public function index() 
@@ -24,7 +36,7 @@ class ChatController extends Controller
         $response = [
             'message' => 'Hi there! Is there something I can help?',
             'data' => [
-                'commands' => $this->commands
+                'commands' => $this->commands,
             ]
         ];
 
@@ -94,16 +106,26 @@ class ChatController extends Controller
                 if($lastCvDetails[$attribute] == null) {
                     if(!$parameter || !$chat) {
                         $response = [
-                            'message' => 'Cannot be empty!',
+                            'message' => 'Parameter or value cannot be empty!',
                             'data' => [
                                 "createcv" => true,
                                 "parameter" => $attribute,
-                                "error" => "Cannot be empty"
+                                "error" => "Parameter or value cannot be empty!"
                             ]
                         ];
                         return response($response, 400);
                     }
                 }
+            }
+
+            $validator = Validator::make([$parameter => $chat], $this->validations[$parameter]);
+
+            if($validator->fails()) {
+                $response = [
+                    'message' => $validator->errors()->first(),
+                    'data' => $validator->errors()
+                ];
+                return response($response, 400);
             }
 
             CvDetail::whereCvId($lastCv->id)->update([
