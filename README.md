@@ -26,7 +26,6 @@ This is the API source code for Resume maker Chatbot Application
 
   Request
   {
-      "_token" : "csrftoken",
       "name" : "user",
       "username" : "user",
       "password" : "123",
@@ -55,7 +54,6 @@ This is the API source code for Resume maker Chatbot Application
 
   Request
   {
-      "_token" : "csrftoken",
       "username" : "user",
       "password" : "123",
   }
@@ -110,7 +108,6 @@ This is the API source code for Resume maker Chatbot Application
 
   Request
   {
-    "_token" : "csrftoken",
     "username" : "username",
     "message" : "chat",
   }
@@ -144,7 +141,6 @@ This is the API source code for Resume maker Chatbot Application
 
   Request
   {
-    "_token" : "csrftoken",
     "username" : "username",
     "message" : "/help",
   }
@@ -178,7 +174,6 @@ This is the API source code for Resume maker Chatbot Application
 
   Request
   {
-    "_token" : "csrftoken",
     "username" : "username",
     "message" : "/history",
   }
@@ -217,7 +212,6 @@ This is the API source code for Resume maker Chatbot Application
 
   Request
   {
-    "_token" : "csrftoken",
     "username" : "username",
     "message" : "/createcv",
   }
@@ -239,7 +233,6 @@ This is the API source code for Resume maker Chatbot Application
 
   Request
   {
-    "_token" : "csrftoken",
     "username" : "username",
     "message" : "name_value",
     "createcv" : "true",
@@ -307,7 +300,6 @@ This is the API source code for Resume maker Chatbot Application
 
   Request
   {
-    "_token" : "csrftoken",
     "_method" : "PUT",
     "name" : "name",
     "password" : "password",
