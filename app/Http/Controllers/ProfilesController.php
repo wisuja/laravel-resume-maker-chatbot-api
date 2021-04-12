@@ -26,7 +26,6 @@ class ProfilesController extends Controller
         User::whereUsername($user->username)->update([
             'name' => $updateUserRequest->name,
             'password' => Hash::make($updateUserRequest->password),
-            'photo' => $updateUserRequest->file('photo')->store('photos', 'public')
         ]);
 
         $response = [

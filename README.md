@@ -30,7 +30,6 @@ This is the API source code for Resume maker Chatbot Application
       "username" : "user",
       "password" : "123",
       "password_confirmation" : "123",
-      "photo": "path/to/photo.jpg"
   }
 
   Response
@@ -40,9 +39,8 @@ This is the API source code for Resume maker Chatbot Application
         "user": {
           "name": "user",
           "username": "user",
-          "photo": "photos/3IOcqYIfSUVDPSvnNvvoClxIY3pHtBuPtfDr24PR.png"
         },
-        "jwt_token": "somejwttokeninhere"
+        "token": "somejwttokeninhere"
       }
   }
 ```
@@ -65,9 +63,8 @@ This is the API source code for Resume maker Chatbot Application
         "user": {
           "name": "user",
           "username": "user",
-          "photo": "photos/3IOcqYIfSUVDPSvnNvvoClxIY3pHtBuPtfDr24PR.png"
         },
-        "jwt_token": "somejwttokeninhere"
+        "token": "somejwttokeninhere"
       }
   }
 ```
@@ -287,7 +284,6 @@ This is the API source code for Resume maker Chatbot Application
       "user": {
         "name": "user",
         "username": "user",
-        "photo": "photos/3IOcqYIfSUVDPSvnNvvoClxIY3pHtBuPtfDr24PR.png"
       }
     }
   }
@@ -304,7 +300,6 @@ This is the API source code for Resume maker Chatbot Application
     "name" : "name",
     "password" : "password",
     "password_confirmation" : "password",
-    "photo" : "path/to/photo.jpg",
   }
 
   Response
@@ -314,7 +309,6 @@ This is the API source code for Resume maker Chatbot Application
       "user": {
         "name": "user",
         "username": "user",
-        "photo": "photos/wVpcFkdEartpkDw03rHnPMoIBCG4V9ifpwYRnIVD.png"
       }
     }
   }

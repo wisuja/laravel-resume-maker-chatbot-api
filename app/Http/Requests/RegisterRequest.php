@@ -29,7 +29,6 @@ class RegisterRequest extends FormRequest
             'name' => ['required'],
             'username' => ['required', 'unique:users'],
             'password' => ['required', 'confirmed'],
-            'photo' => ['required', 'image'],
         ];
     }
 
