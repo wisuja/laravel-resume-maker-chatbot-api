@@ -253,6 +253,7 @@ This is the API source code for Resume maker Chatbot Application
   {
     "message": "Your CV is complete!",
     "data": {
+      "createcv": true,
       "jobs_recommendations": [
         {
           "locations": "location",
