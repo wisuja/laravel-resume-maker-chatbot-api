@@ -24,6 +24,7 @@ Route::get('/', function () {
 
 Route::post('/register', [RegisterController::class, 'register']);
 Route::post('/login', [LoginController::class, 'login']);
+Route::get('/cv/{cv}', [CvsController::class, 'show'])->name('download-cv');
 
 Route::middleware(['jwt.verify'])->group(function () {
     Route::get('/profile/{user}', [ProfilesController::class, 'show']);
@@ -31,6 +32,4 @@ Route::middleware(['jwt.verify'])->group(function () {
     
     Route::get('/chat', [ChatController::class, 'index']);
     Route::post('/chat', [ChatController::class, 'chat']);
-    
-    Route::get('/cv/{cv}', [CvsController::class, 'show'])->name('download-cv');
 });

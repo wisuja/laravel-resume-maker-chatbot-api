@@ -69,6 +69,12 @@ This is the API source code for Resume maker Chatbot Application
   }
 ```
 
+### Download CV
+
+```
+  GET /cv/{id}
+```
+
 > Disclaimer. You need to include Authorization header on each request. `Authorization: 'Bearer putyourjwttokenhere'
 
 ### Chat
@@ -313,10 +319,4 @@ This is the API source code for Resume maker Chatbot Application
       }
     }
   }
-```
-
-### Download CV
-
-```
-  GET /cv/{id}
 ```
