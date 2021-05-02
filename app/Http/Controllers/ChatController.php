@@ -147,8 +147,6 @@ class ChatController extends Controller
                 }
             }
 
-            $jobs_recommendations = $this->searchJobs($lastCv);
-
             $lastCv->update([
                 'url_cv' => route('download-cv', ['cv' => $lastCv->id])
             ]);
@@ -156,7 +154,6 @@ class ChatController extends Controller
             $response = [
                 'message' => 'Your CV is complete!',
                 'data' => [
-                    "jobs_recommendations" => $jobs_recommendations,
                     "url_cv" => route('download-cv', ['cv' => $lastCv->id])
                 ]
             ];
@@ -243,23 +240,5 @@ class ChatController extends Controller
         CvDetail::create([
             'cv_id' => $cv_id
         ]);
-    }
-
-    public function searchJobs (Cv $cv) 
-    {
-        $jobs_recommendations = (new JobSearchController())->search($cv->cv_detail->keywords);
-        $url_recommendation = [];
-
-        foreach($jobs_recommendations as $job) {
-            array_push($url_recommendation, $job->url);
-        }
-
-        $url_recommendation = implode("|", $url_recommendation);
-
-        $cv->update([
-            'url_recommendation' => $url_recommendation
-        ]);
-
-        return $jobs_recommendations;
     }
 }

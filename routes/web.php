@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\CvsController;
+use App\Http\Controllers\JobSearchController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfilesController;
 use App\Http\Controllers\RegisterController;
@@ -33,4 +34,6 @@ Route::middleware(['jwt.verify'])->group(function () {
     Route::post('/chat', [ChatController::class, 'chat']);
     
     Route::get('/cv/{cv}', [CvsController::class, 'show'])->name('download-cv');
+    Route::get('/cv/{cv}/search/{keyword}', [JobSearchController::class, 'search']);
 });
+
