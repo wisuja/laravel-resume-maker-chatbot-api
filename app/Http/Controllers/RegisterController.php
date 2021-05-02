@@ -16,7 +16,6 @@ class RegisterController extends Controller
             'name' => $registerRequest->name,
             'username' => $registerRequest->username,
             'password' => Hash::make($registerRequest->password),
-            'photo' => $registerRequest->file('photo')->store('photos', 'public'),
         ]);
 
         $token = JWTAuth::fromUser($user);
@@ -25,7 +24,7 @@ class RegisterController extends Controller
             'message' => 'User has been created successfully.',
             'data' => [
                 'user' => $user,
-                'jwt_token' => $token
+                'token' => $token
             ]
         ];
 

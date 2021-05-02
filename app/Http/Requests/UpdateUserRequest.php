@@ -28,7 +28,6 @@ class UpdateUserRequest extends FormRequest
         return [
             'name' => ['required'],
             'password' => ['required', 'confirmed'],
-            'photo' => ['required', 'image'] 
         ];
     }
 

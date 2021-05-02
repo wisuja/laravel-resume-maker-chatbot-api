@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Cv;
 use Illuminate\Http\Request;
-use PDF;
 
 class CvsController extends Controller
 {
@@ -47,9 +46,13 @@ class CvsController extends Controller
      */
     public function show(Cv $cv)
     {
-        $pdf = PDF::loadView('cv-template');
+        $detail = $cv->cv_detail;
+        $detail["links"] = explode('|', $detail["links"]);
+        $detail["skills"] = explode('|', $detail["skills"]);
+        $detail["education"] = explode('|', $detail["education"]);
+        $detail["work_experiences"] = explode('|', $detail["work_experiences"]);
 
-        return $pdf->download('cv.pdf');
+        return view('cv-template-1', compact('detail'));
     }
 
     /**

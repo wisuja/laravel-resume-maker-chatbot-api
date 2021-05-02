@@ -154,6 +154,7 @@ class ChatController extends Controller
             $response = [
                 'message' => 'Your CV is complete!',
                 'data' => [
+                    "createcv" => false,
                     "url_cv" => route('download-cv', ['cv' => $lastCv->id])
                 ]
             ];
