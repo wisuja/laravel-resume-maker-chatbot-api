@@ -34,7 +34,6 @@ Route::middleware(['jwt.verify'])->group(function () {
     Route::get('/chat', [ChatController::class, 'index']);
     Route::post('/chat', [ChatController::class, 'chat']);
     
-    Route::get('/cv/{cv}', [CvsController::class, 'show'])->name('download-cv');
     Route::get('/cv/{cv}/search/{keyword}', [JobSearchController::class, 'search'])->name('search');
 });
 
