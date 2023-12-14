@@ -1,10 +1,6 @@
 # Resume Maker Chatbot Application API
 
-This is a project that I did when I was in my college studies. It is a resume maker application that was built using CI4 and Laravel.
-
-Built using Laravel 8 and Careerjet Public API.
-
-This is the API source code for Resume maker Chatbot Application
+This is a project that I did when I was in my college studies. It is a resume maker application that was built using CI4 and Laravel. This project utilizes [Careerjet Public API](https://www.careerjet.com/partners/api/) to search for jobs.
 
 ## Steps to run this application:
 
