@@ -1,21 +1,27 @@
-# Resume maker Chatbot Application API
+# Resume Maker Chatbot Application API
+
+This is a project that I did when I was in my college studies. It is a resume maker application that was built using CI4 and Laravel.
 
 Built using Laravel 8 and Careerjet Public API.
 
 This is the API source code for Resume maker Chatbot Application
 
-## Install steps:
+## Steps to run this application:
 
-1. Clone this repo `git clone https://github.com/wisuja/Resume-maker-Chatbot-API.git`
-2. Run `composer install`
-3. Copy the .env file `cp .env.example .env`
-4. Change the database name
-5. Run `php artisan key:generate` to generate APPKEY
-6. Run `php artisan jwt:secret` to generate JWT Secret
-7. Run `php artisan migrate && php artisan db:seed`
-8. Put Careerjet's AFFID in .env
-9. Run `php artisan serve`
-10. Access it on `http://localhost:8000`
+1. Click on `<> Code` button
+2. Copy the HTTPS/SSH repository link
+3. Run `git clone` command on your terminal.
+4. Run `composer install`
+5. Copy the .env file `cp .env.example .env`
+6. Change the database data
+7. Run `php artisan key:generate` to generate APPKEY
+8. Run `php artisan jwt:secret` to generate JWT Secret
+9. Run `php artisan migrate && php artisan db:seed`
+10. Put Careerjet's AFFID in .env
+11. Run `php artisan serve`
+12. Access it on `http://localhost:8000`
+
+### Resume Maker Client repository : [Click here](https://github.com/wisuja/ci4-resume-maker)
 
 ## API Documentation
 
